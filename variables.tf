@@ -45,7 +45,7 @@ EOT
       trusted_address_ranges       = optional(list(string))
       virtual_hub_id               = string
     })
-    destination_nat = optional(object({
+    destination_nat = optional(list(object({
       backend_config = optional(object({
         port              = number
         public_ip_address = string
@@ -56,7 +56,7 @@ EOT
       }))
       name     = string
       protocol = string
-    }))
+    })))
     dns_settings = optional(object({
       dns_servers   = optional(list(string))
       use_azure_dns = optional(bool) # Default: false
